@@ -25,7 +25,11 @@
 #ifndef HAL_ADC_LLD_H
 #define HAL_ADC_LLD_H
 
-#if HAL_USE_ADC || defined(__DOXYGEN__)
+#include "/home/dynfer/adu/ChibiOS/os/hal/boards/ST_NUCLEO144_H743ZI/board.h"
+#include "/home/dynfer/adu/cfg/mcuconf.h"
+#include "/home/dynfer/adu/cfg/halconf.h"
+
+#if defined(HAL_USE_ADC) || defined(__DOXYGEN__)
 
 /*===========================================================================*/
 /* Driver constants.                                                         */

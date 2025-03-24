@@ -39,6 +39,7 @@
 
 #include "stm32_registry.h"
 
+
 /*===========================================================================*/
 /* Driver constants.                                                         */
 /*===========================================================================*/
@@ -1401,7 +1402,7 @@
 /*
  * HSE related checks.
  */
-#if STM32_HSE_ENABLED
+#if (STM32_HSE_ENABLED == TRUE)
 
 #if !defined(STM32_HSECLK)
 #error "HSE frequency not defined"

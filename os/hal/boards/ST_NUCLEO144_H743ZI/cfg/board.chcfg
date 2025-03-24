@@ -18,7 +18,7 @@
   </ethernet_phy>
   <subtype>STM32H743xx</subtype>
   <clocks
-    HSEFrequency="8000000"
+    HSEFrequency="16000000"
     HSEBypass="true"
     LSEFrequency="32768"
     LSEBypass="false"
