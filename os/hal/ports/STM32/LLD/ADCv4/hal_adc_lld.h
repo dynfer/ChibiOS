@@ -25,9 +25,9 @@
 #ifndef HAL_ADC_LLD_H
 #define HAL_ADC_LLD_H
 
-#include "/home/dynfer/adu/ChibiOS/os/hal/boards/ST_NUCLEO144_H743ZI/board.h"
-#include "/home/dynfer/adu/cfg/mcuconf.h"
-#include "/home/dynfer/adu/cfg/halconf.h"
+#include "ChibiOS/os/hal/boards/ST_NUCLEO144_H743ZI/board.h"
+#include "cfg/mcuconf.h"
+#include "cfg/halconf.h"
 
 #if defined(HAL_USE_ADC) || defined(__DOXYGEN__)
 
