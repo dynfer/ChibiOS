@@ -22,6 +22,8 @@
  * @{
  */
 
+#include "ChibiOS/os/hal/boards/ST_NUCLEO144_H743ZI/board.h"
+
 #ifndef STM32_REGISTRY_H
 #define STM32_REGISTRY_H
 
