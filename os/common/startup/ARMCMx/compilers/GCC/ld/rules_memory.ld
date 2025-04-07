@@ -38,6 +38,9 @@ __ram6_end__            = __ram6_base__ + __ram6_size__;
 __ram7_base__           = ORIGIN(ram7);
 __ram7_size__           = LENGTH(ram7);
 __ram7_end__            = __ram7_base__ + __ram7_size__;
+__sdram_base__           = ORIGIN(sdram);
+__sdram_size__           = LENGTH(sdram);
+__sdram_end__            = __sdram_base__ + __sdram_size__;
 
 __flash0_base__         = ORIGIN(flash0);
 __flash0_size__         = LENGTH(flash0);
@@ -241,6 +244,28 @@ SECTIONS
         . = ALIGN(4);
         __ram7_free__ = .;
     } > ram7
+
+    .sdram_init : ALIGN(4)
+    {
+        __sdram_init_text__ = LOADADDR(.sdram_init);
+        __sdram_init__ = .;
+        KEEP(*(.sdram_init))
+        KEEP(*(.sdram_init.*))
+        . = ALIGN(4);
+    } > sdram AT > RAM_INIT_FLASH_LMA
+
+    .sdram (NOLOAD) : ALIGN(4)
+    {
+        __sdram_clear__ = .;
+        *(.sdram_clear)
+        *(.sdram_clear.*)
+        . = ALIGN(4);
+        __sdram_noinit__ = .;
+        *(.sdram)
+        *(.sdram.*)
+        . = ALIGN(4);
+        __sdram_free__ = .;
+    } > sdram
 
     .flash0 : ALIGN(4)
     {

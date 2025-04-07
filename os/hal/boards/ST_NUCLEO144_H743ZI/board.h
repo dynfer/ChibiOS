@@ -462,7 +462,7 @@
                                      PIN_MODE_INPUT(GPIOA_PIN5) |           \
                                      PIN_MODE_INPUT(GPIOA_PIN6) |           \
                                      PIN_MODE_ANALOG(GPIOA_RMII_CRS_DV) |\
-                                     PIN_MODE_ANALOG(GPIOA_USB_SOF) |    \
+                                     PIN_MODE_ALTERNATE(GPIOA_USB_SOF) |    \
                                      PIN_MODE_ALTERNATE(GPIOA_USB_VBUS) |      \
                                      PIN_MODE_ALTERNATE(GPIOA_USB_ID) |     \
                                      PIN_MODE_ANALOG(GPIOA_USB_DM) |     \
@@ -542,7 +542,7 @@
                                      PIN_AFIO_AF(GPIOA_PIN5, 0U) |          \
                                      PIN_AFIO_AF(GPIOA_PIN6, 0U) |          \
                                      PIN_AFIO_AF(GPIOA_RMII_CRS_DV, 0U))
-#define VAL_GPIOA_AFRH              (PIN_AFIO_AF(GPIOA_USB_SOF, 0U) |      \
+#define VAL_GPIOA_AFRH              (PIN_AFIO_AF(GPIOA_USB_SOF, 13U) |      \
                                      PIN_AFIO_AF(GPIOA_USB_VBUS, 7U) |      \
                                      PIN_AFIO_AF(GPIOA_USB_ID, 7U) |       \
                                      PIN_AFIO_AF(GPIOA_USB_DM, 0U) |       \
@@ -1049,7 +1049,7 @@
                                      PIN_MODE_ANALOG(GPIOF_PIN7) |           \
                                      PIN_MODE_ANALOG(GPIOF_PIN8) |           \
                                      PIN_MODE_ANALOG(GPIOF_PIN9) |           \
-                                     PIN_MODE_ANALOG(GPIOF_PIN10) |          \
+                                     PIN_MODE_ALTERNATE(GPIOF_PIN10) |          \
                                      PIN_MODE_ALTERNATE(GPIOF_PIN11) |          \
                                      PIN_MODE_ALTERNATE(GPIOF_PIN12) |          \
                                      PIN_MODE_ALTERNATE(GPIOF_PIN13) |          \
@@ -1129,7 +1129,7 @@
                                      PIN_AFIO_AF(GPIOF_PIN7, 0U))
 #define VAL_GPIOF_AFRH              (PIN_AFIO_AF(GPIOF_PIN8, 0U) |          \
                                      PIN_AFIO_AF(GPIOF_PIN9, 0U) |          \
-                                     PIN_AFIO_AF(GPIOF_PIN10, 0U) |         \
+                                     PIN_AFIO_AF(GPIOF_PIN10, 14U) |         \
                                      PIN_AFIO_AF(GPIOF_PIN11, 12U) |         \
                                      PIN_AFIO_AF(GPIOF_PIN12, 12U) |         \
                                      PIN_AFIO_AF(GPIOF_PIN13, 12U) |         \
@@ -1162,13 +1162,13 @@
                                      PIN_MODE_ANALOG(GPIOG_PIN3) |           \
                                      PIN_MODE_ALTERNATE(GPIOG_PIN4) |           \
                                      PIN_MODE_ALTERNATE(GPIOG_PIN5) |           \
-                                     PIN_MODE_ANALOG(GPIOG_USB_FS_PWR_EN) | \
-                                     PIN_MODE_ANALOG(GPIOG_USB_FS_OVCR) |    \
+                                     PIN_MODE_ALTERNATE(GPIOG_USB_FS_PWR_EN) | \
+                                     PIN_MODE_ALTERNATE(GPIOG_USB_FS_OVCR) |    \
                                      PIN_MODE_ALTERNATE(GPIOG_PIN8) |           \
                                      PIN_MODE_ANALOG(GPIOG_PIN9) |           \
-                                     PIN_MODE_ANALOG(GPIOG_PIN10) |          \
+                                     PIN_MODE_ALTERNATE(GPIOG_PIN10) |          \
                                      PIN_MODE_ANALOG(GPIOG_RMII_TX_EN) | \
-                                     PIN_MODE_ANALOG(GPIOG_PIN12) |          \
+                                     PIN_MODE_ALTERNATE(GPIOG_PIN12) |          \
                                      PIN_MODE_ANALOG(GPIOG_RMII_TXD0) |  \
                                      PIN_MODE_ANALOG(GPIOG_PIN14) |          \
                                      PIN_MODE_ALTERNATE(GPIOG_PIN15))
@@ -1242,13 +1242,13 @@
                                      PIN_AFIO_AF(GPIOG_PIN3, 0U) |          \
                                      PIN_AFIO_AF(GPIOG_PIN4, 12U) |          \
                                      PIN_AFIO_AF(GPIOG_PIN5, 12U) |          \
-                                     PIN_AFIO_AF(GPIOG_USB_FS_PWR_EN, 0U) | \
-                                     PIN_AFIO_AF(GPIOG_USB_FS_OVCR, 0U))
+                                     PIN_AFIO_AF(GPIOG_USB_FS_PWR_EN, 14U) | \
+                                     PIN_AFIO_AF(GPIOG_USB_FS_OVCR, 14U))
 #define VAL_GPIOG_AFRH              (PIN_AFIO_AF(GPIOG_PIN8, 12U) |          \
                                      PIN_AFIO_AF(GPIOG_PIN9, 0U) |          \
-                                     PIN_AFIO_AF(GPIOG_PIN10, 0U) |         \
+                                     PIN_AFIO_AF(GPIOG_PIN10, 9U) |         \
                                      PIN_AFIO_AF(GPIOG_RMII_TX_EN, 0U) |   \
-                                     PIN_AFIO_AF(GPIOG_PIN12, 0U) |         \
+                                     PIN_AFIO_AF(GPIOG_PIN12, 9U) |         \
                                      PIN_AFIO_AF(GPIOG_RMII_TXD0, 0U) |    \
                                      PIN_AFIO_AF(GPIOG_PIN14, 0U) |         \
                                      PIN_AFIO_AF(GPIOG_PIN15, 12U))
@@ -1279,16 +1279,16 @@
                                      PIN_MODE_ALTERNATE(GPIOH_PIN3) |           \
                                      PIN_MODE_ANALOG(GPIOH_PIN4) |           \
                                      PIN_MODE_ALTERNATE(GPIOH_PIN5) |           \
-                                     PIN_MODE_ANALOG(GPIOH_PIN6) |           \
+                                     PIN_MODE_OUTPUT(GPIOH_PIN6) |           \
                                      PIN_MODE_ANALOG(GPIOH_PIN7) |           \
                                      PIN_MODE_ANALOG(GPIOH_PIN8) |           \
-                                     PIN_MODE_ANALOG(GPIOH_PIN9) |           \
-                                     PIN_MODE_ANALOG(GPIOH_PIN10) |          \
-                                     PIN_MODE_ANALOG(GPIOH_PIN11) |          \
-                                     PIN_MODE_ANALOG(GPIOH_PIN12) |          \
-                                     PIN_MODE_ANALOG(GPIOH_PIN13) |          \
+                                     PIN_MODE_ALTERNATE(GPIOH_PIN9) |           \
+                                     PIN_MODE_ALTERNATE(GPIOH_PIN10) |          \
+                                     PIN_MODE_ALTERNATE(GPIOH_PIN11) |          \
+                                     PIN_MODE_ALTERNATE(GPIOH_PIN12) |          \
+                                     PIN_MODE_ALTERNATE(GPIOH_PIN13) |          \
                                      PIN_MODE_ANALOG(GPIOH_PIN14) |          \
-                                     PIN_MODE_ANALOG(GPIOH_PIN15))
+                                     PIN_MODE_ALTERNATE(GPIOH_PIN15))
 #define VAL_GPIOH_OTYPER            (PIN_OTYPE_PUSHPULL(GPIOH_OSC_IN) |     \
                                      PIN_OTYPE_PUSHPULL(GPIOH_OSC_OUT) |    \
                                      PIN_OTYPE_PUSHPULL(GPIOH_PIN2) |       \
@@ -1327,7 +1327,7 @@
                                      PIN_PUPDR_FLOATING(GPIOH_PIN3) |         \
                                      PIN_PUPDR_FLOATING(GPIOH_PIN4) |         \
                                      PIN_PUPDR_FLOATING(GPIOH_PIN5) |         \
-                                     PIN_PUPDR_FLOATING(GPIOH_PIN6) |         \
+                                     PIN_PUPDR_PULLUP(GPIOH_PIN6) |         \
                                      PIN_PUPDR_FLOATING(GPIOH_PIN7) |         \
                                      PIN_PUPDR_FLOATING(GPIOH_PIN8) |         \
                                      PIN_PUPDR_FLOATING(GPIOH_PIN9) |         \
@@ -1362,13 +1362,13 @@
                                      PIN_AFIO_AF(GPIOH_PIN6, 0U) |          \
                                      PIN_AFIO_AF(GPIOH_PIN7, 0U))
 #define VAL_GPIOH_AFRH              (PIN_AFIO_AF(GPIOH_PIN8, 0U) |          \
-                                     PIN_AFIO_AF(GPIOH_PIN9, 0U) |          \
-                                     PIN_AFIO_AF(GPIOH_PIN10, 0U) |         \
-                                     PIN_AFIO_AF(GPIOH_PIN11, 0U) |         \
-                                     PIN_AFIO_AF(GPIOH_PIN12, 0U) |         \
-                                     PIN_AFIO_AF(GPIOH_PIN13, 0U) |         \
+                                     PIN_AFIO_AF(GPIOH_PIN9, 14U) |          \
+                                     PIN_AFIO_AF(GPIOH_PIN10, 14U) |         \
+                                     PIN_AFIO_AF(GPIOH_PIN11, 14U) |         \
+                                     PIN_AFIO_AF(GPIOH_PIN12, 14U) |         \
+                                     PIN_AFIO_AF(GPIOH_PIN13, 14U) |         \
                                      PIN_AFIO_AF(GPIOH_PIN14, 0U) |         \
-                                     PIN_AFIO_AF(GPIOH_PIN15, 0U))
+                                     PIN_AFIO_AF(GPIOH_PIN15, 14U))
 
 /*
  * GPIOI setup:
@@ -1390,17 +1390,17 @@
  * PI14 - PIN14                     (input pullup).
  * PI15 - PIN15                     (input pullup).
  */
-#define VAL_GPIOI_MODER             (PIN_MODE_ANALOG(GPIOI_PIN0) |           \
-                                     PIN_MODE_ANALOG(GPIOI_PIN1) |           \
-                                     PIN_MODE_ANALOG(GPIOI_PIN2) |           \
+#define VAL_GPIOI_MODER             (PIN_MODE_ALTERNATE(GPIOI_PIN0) |           \
+                                     PIN_MODE_ALTERNATE(GPIOI_PIN1) |           \
+                                     PIN_MODE_ALTERNATE(GPIOI_PIN2) |           \
                                      PIN_MODE_ANALOG(GPIOI_PIN3) |           \
                                      PIN_MODE_ANALOG(GPIOI_PIN4) |           \
-                                     PIN_MODE_ANALOG(GPIOI_PIN5) |           \
-                                     PIN_MODE_ANALOG(GPIOI_PIN6) |           \
-                                     PIN_MODE_ANALOG(GPIOI_PIN7) |           \
+                                     PIN_MODE_ALTERNATE(GPIOI_PIN5) |           \
+                                     PIN_MODE_ALTERNATE(GPIOI_PIN6) |           \
+                                     PIN_MODE_ALTERNATE(GPIOI_PIN7) |           \
                                      PIN_MODE_ANALOG(GPIOI_PIN8) |           \
-                                     PIN_MODE_ANALOG(GPIOI_PIN9) |           \
-                                     PIN_MODE_ANALOG(GPIOI_PIN10) |          \
+                                     PIN_MODE_ALTERNATE(GPIOI_PIN9) |           \
+                                     PIN_MODE_ALTERNATE(GPIOI_PIN10) |          \
                                      PIN_MODE_ANALOG(GPIOI_PIN11) |          \
                                      PIN_MODE_ANALOG(GPIOI_PIN12) |          \
                                      PIN_MODE_ANALOG(GPIOI_PIN13) |          \
@@ -1470,17 +1470,17 @@
                                      PIN_ODR_LOW(GPIOI_PIN13) |            \
                                      PIN_ODR_LOW(GPIOI_PIN14) |            \
                                      PIN_ODR_LOW(GPIOI_PIN15))
-#define VAL_GPIOI_AFRL              (PIN_AFIO_AF(GPIOI_PIN0, 0U) |          \
-                                     PIN_AFIO_AF(GPIOI_PIN1, 0U) |          \
-                                     PIN_AFIO_AF(GPIOI_PIN2, 0U) |          \
+#define VAL_GPIOI_AFRL              (PIN_AFIO_AF(GPIOI_PIN0, 14U) |          \
+                                     PIN_AFIO_AF(GPIOI_PIN1, 14U) |          \
+                                     PIN_AFIO_AF(GPIOI_PIN2, 14U) |          \
                                      PIN_AFIO_AF(GPIOI_PIN3, 0U) |          \
                                      PIN_AFIO_AF(GPIOI_PIN4, 0U) |          \
-                                     PIN_AFIO_AF(GPIOI_PIN5, 0U) |          \
-                                     PIN_AFIO_AF(GPIOI_PIN6, 0U) |          \
-                                     PIN_AFIO_AF(GPIOI_PIN7, 0U))
+                                     PIN_AFIO_AF(GPIOI_PIN5, 14U) |          \
+                                     PIN_AFIO_AF(GPIOI_PIN6, 15U) |          \
+                                     PIN_AFIO_AF(GPIOI_PIN7, 14U))
 #define VAL_GPIOI_AFRH              (PIN_AFIO_AF(GPIOI_PIN8, 0U) |          \
-                                     PIN_AFIO_AF(GPIOI_PIN9, 0U) |          \
-                                     PIN_AFIO_AF(GPIOI_PIN10, 0U) |         \
+                                     PIN_AFIO_AF(GPIOI_PIN9, 14U) |          \
+                                     PIN_AFIO_AF(GPIOI_PIN10, 14U) |         \
                                      PIN_AFIO_AF(GPIOI_PIN11, 0U) |         \
                                      PIN_AFIO_AF(GPIOI_PIN12, 0U) |         \
                                      PIN_AFIO_AF(GPIOI_PIN13, 0U) |         \
