@@ -66,6 +66,9 @@ __flash6_end__          = __flash6_base__ + __flash6_size__;
 __flash7_base__         = ORIGIN(flash7);
 __flash7_size__         = LENGTH(flash7);
 __flash7_end__          = __flash7_base__ + __flash7_size__;
+__config_base__		= ORIGIN(config);
+__config_size__		= LENGTH(config);
+__config_end__		= __config_base__ + __config_size__;
 
 SECTIONS
 {
@@ -330,6 +333,14 @@ SECTIONS
         KEEP(*(.flash7_init.*))
         __flash7_free__ = .;
     } > flash7
+
+    .config : ALIGN(4)
+    {
+	    __config_init__ = .;
+	    KEEP(*(.config_init))
+	    KEEP(*(.config_init.*))
+	    __config_free__ = .;
+    } > config
 
     /* The default heap uses the (statically) unused part of a RAM section.*/
     .heap (NOLOAD) :
