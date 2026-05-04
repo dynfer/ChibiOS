@@ -143,6 +143,22 @@ ICUDriver ICUD15;
 #endif
 
 /**
+ * @brief   ICUD16 driver identifier.
+ * @note    The driver ICUD16 allocates the timer TIM16 when enabled.
+ */
+#if STM32_ICU_USE_TIM16 || defined(__DOXYGEN__)
+ICUDriver ICUD16;
+#endif
+
+/**
+ * @brief   ICUD17 driver identifier.
+ * @note    The driver ICUD17 allocates the timer TIM17 when enabled.
+ */
+#if STM32_ICU_USE_TIM17 || defined(__DOXYGEN__)
+ICUDriver ICUD17;
+#endif
+
+/**
  * @brief   ICUD20 driver identifier.
  * @note    The driver ICUD20 allocates the timer TIM20 when enabled.
  */
@@ -555,6 +571,18 @@ void icu_lld_init(void) {
   ICUD15.tim = STM32_TIM15;
 #endif
 
+#if STM32_ICU_USE_TIM16
+  /* Driver initialization.*/
+  icuObjectInit(&ICUD16);
+  ICUD16.tim = STM32_TIM16;
+#endif
+
+#if STM32_ICU_USE_TIM17
+  /* Driver initialization.*/
+  icuObjectInit(&ICUD17);
+  ICUD17.tim = STM32_TIM17;
+#endif
+
 #if STM32_ICU_USE_TIM20
   /* Driver initialization.*/
   icuObjectInit(&ICUD20);
@@ -760,6 +788,30 @@ void icu_lld_start(ICUDriver *icup) {
       rccResetTIM15();
 #if defined(STM32_TIM15CLK)
       icup->clock = STM32_TIM15CLK;
+#else
+      icup->clock = STM32_TIMCLK2;
+#endif
+    }
+#endif
+
+#if STM32_ICU_USE_TIM16
+    if (&ICUD16 == icup) {
+      rccEnableTIM16(true);
+      rccResetTIM16();
+#if defined(STM32_TIM16CLK)
+      icup->clock = STM32_TIM16CLK;
+#else
+      icup->clock = STM32_TIMCLK2;
+#endif
+    }
+#endif
+
+#if STM32_ICU_USE_TIM17
+    if (&ICUD17 == icup) {
+      rccEnableTIM17(true);
+      rccResetTIM17();
+#if defined(STM32_TIM17CLK)
+      icup->clock = STM32_TIM17CLK;
 #else
       icup->clock = STM32_TIMCLK2;
 #endif
@@ -990,6 +1042,18 @@ void icu_lld_stop(ICUDriver *icup) {
 #if STM32_ICU_USE_TIM15
     if (&ICUD15 == icup) {
       rccDisableTIM15();
+    }
+#endif
+
+#if STM32_ICU_USE_TIM16
+    if (&ICUD16 == icup) {
+      rccDisableTIM16();
+    }
+#endif
+
+#if STM32_ICU_USE_TIM17
+    if (&ICUD17 == icup) {
+      rccDisableTIM17();
     }
 #endif
 
